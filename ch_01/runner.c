@@ -7,6 +7,8 @@
 #include "ex_1_7.h"
 #include "ex_1_8.h"
 #include "ex_1_9.h"
+#include "ex_1_10.h"
+#include "ex_1_12.h"
 
 int main()
 {
@@ -18,5 +20,9 @@ int main()
     // ex_1_6();
     // ex_1_7();
     // ex_1_8();
-    ex_1_9();
+    // ex_1_9();
+    // ex_1_10();
+    ex_1_12();
+
+    return 0;
 }

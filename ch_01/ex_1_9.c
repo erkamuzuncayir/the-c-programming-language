@@ -1,15 +1,18 @@
 #include <stdio.h>
 
+#define NONBLANK 'a'
+
 void ex_1_9()
 {
     int c;
-    int lastC = '\0';
+    int lastC = NONBLANK;
 
-    while((c = getchar()) != EOF)
+    while ((c = getchar()) != EOF)
     {
-        if(c == '\n')
-            printf(copiedLine);
-        else
-            copiedLine = copiedLine + c;
+        if (c != ' ')
+            putchar(c);
+        else if (lastC != ' ')
+            putchar(c);
+        lastC = c;
     }
 }
