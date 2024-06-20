@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Syncthing/StudyRepositories/The-C-Programming-Language",
-      "program": "c:/Syncthing/StudyRepositories/The-C-Programming-Language/build/Debug/outDebug",
+      "cwd": "c:/Syncthing/StudyRepositories/The-C-Programming-Language/ch_01",
+      "program": "c:/Syncthing/StudyRepositories/The-C-Programming-Language/ch_01/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
