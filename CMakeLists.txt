@@ -1,0 +1,41 @@
+cmake_minimum_required(VERSION 3.30)
+project(the_c_programming_language C)
+set(CMAKE_C_STANDARD 11)
+
+add_executable(the_c_programming_language
+        #       ch_01/ex_1/ex_1_1.c
+        #       ch_01/ex_10/ex_1_10.c
+        #       ch_01/ex_12/ex_1_12.c
+        #       ch_01/ex_13/ex_1_13.c
+        #       ch_01/ex_14/ex_1_14.c
+        #       ch_01/ex_15/ex_1_15.c
+        #       ch_01/ex_16/ex_1_16.c
+        #       ch_01/ex_17/ex_1_17.c
+        #       ch_01/ex_18/ex_1_18.c
+        #       ch_01/ex_19/ex_1_19.c
+        #       ch_01/ex_2/ex_1_2.c
+        #       ch_01/ex_20/ex_1_20.c
+        #       ch_01/ex_21/ex_1_21.c
+        #       ch_01/ex_22/ex_1_22.c
+        #       ch_01/ex_23/ex_1_23.c
+        #       ch_01/ex_24/ex_1_24.c
+        #       ch_01/ex_3/ex_1_3.c
+        #       ch_01/ex_4/ex_1_4.c
+        #       ch_01/ex_5/ex_1_5.c
+        #       ch_01/ex_6/ex_1_6.c
+        #       ch_01/ex_7/ex_1_7.c
+        #       ch_01/ex_8/ex_1_8.c
+        #       ch_01/ex_9/ex_1_9.c
+        #       ch_02/ex_1/ex_2_1.c
+        #       ch_02/ex_2/ex_2_2.c
+        #       ch_02/ex_3/ex_2_3.c
+        #       ch_02/ex_4/ex_2_4.c
+        #       ch_02/ex_5/ex_2_5.c
+        #       ch_02/ex_6/ex_2_6.c
+        #       ch_02/ex_7/ex_2_7.c
+        #       ch_02/ex_8/ex_2_8.c
+        #       ch_02/ex_9/ex_2_9.c
+        #       ch_02/ex_10/ex_2_10.c
+)
+
+target_link_libraries(the_c_programming_language m)
