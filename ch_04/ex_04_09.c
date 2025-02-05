@@ -4,11 +4,12 @@
 #define MAXOP 100 /* max size of operand or operator */
 #define NUMBER '0' /* signal that a number was found */
 #define MAXVAL 100 /* maximum depth of val stack */
+#define BUFSIZE 100
 
 int sp = 0; /* next free stack position */
 double val[MAXVAL]; /* value stack */
-char buf;
-int bufferState = 0; /* 0 means buffer empty, 1 is buffer populated */
+int buf[BUFSIZE];
+int bufp = 0;
 
 double add(double opOne, double opTwo);
 double multiply(double opOne, double opTwo);
@@ -141,19 +142,13 @@ int getop(char s[])
 int getch(void) /* get a (possibly pushed-back) character
 */
 {
-  if (bufferState == 1) {
-    bufferState = 0;
-    return buf;
-  }
-  return getchar();
+  return (bufp > 0) ? buf[--bufp] : getchar();
 }
 void ungetch(int c)
  /* push character back on input */
 {
-  if (bufferState == 1)
+  if (bufp >= BUFSIZE)
     printf("ungetch: too many characters\n");
-  else {
-    buf = c;
-    bufferState = 1;
-  }
+  else
+    buf[bufp++] = c;
 }

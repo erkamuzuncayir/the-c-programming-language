@@ -1,14 +1,14 @@
 #include <stdio.h>
-#include <stdlib.h> /* for atof() */
-#include <ctype.h>
+
 #define MAXOP 100 /* max size of operand or operator */
 #define NUMBER '0' /* signal that a number was found */
 #define MAXVAL 100 /* maximum depth of val stack */
+#define BUFSIZE 100
 
 int sp = 0; /* next free stack position */
 double val[MAXVAL]; /* value stack */
-char buf;
-int bufferState = 0; /* 0 means buffer empty, 1 is buffer populated */
+int buf[BUFSIZE];
+int bufp = 0;
 
 double add(double opOne, double opTwo);
 double multiply(double opOne, double opTwo);
@@ -17,19 +17,18 @@ double divide(double opOne, double opTwo);
 int mod(int opOne, int opTwo);
 void push(double);
 double pop(void);
-int getop(char []);
-int getch(void);
-void ungetch(int);
+int getlines(char s[], int lim);
 /* reverse Polish calculator */
 int main() {
-  int type;
   double op2;
   char s[MAXOP];
-  while ((type = getop(s)) != EOF) {
-    switch (type) {
-    case NUMBER:
-      push(atof(s));
-      break;
+
+  for (int i = 0; i < MAXOP; i++) {
+    s[i] = 0;
+  }
+  getlines(s, MAXOP);
+  for (int i = 0; s[i] != '\0'; i++){
+    switch (s[i]) {
     case '+':
       push(add(pop(), pop()));
       break;
@@ -58,7 +57,8 @@ int main() {
       printf("\t%.8g\n", pop());
       break;
     default:
-      printf("error: unknown command %s\n", s);
+      if (s[i] >= '0' && s[i] <= '9')
+        push(s[i] - '0');
       break;
     }
   }
@@ -101,59 +101,17 @@ double pop(void)
   }
 }
 
-/* getop: get next character or numeric operand */
-int getop(char s[])
+/* getline: get line into s, return length */
+int getlines(char s[], int lim)
 {
-  int i, c, next;
-  while ((s[0] = c = getch()) == ' ' || c == '\t')
-    ;
-  s[1] = '\0';
-  if (!isdigit(c) && c != '.' && c != '-')
-    return c; /* not a number */
+  int c, i;
 
   i = 0;
-  if (c == '-') {
-    next = getch();
-    if (!isdigit(next) && next != '.') {
-      ungetch(next);
-      return c;
-    }
-    s[++i] = c = next;
+  while (--lim > 0 && (c=getchar()) != EOF && c != '\n') {
+    s[i++] = c;
+  }if (c == '\n') {
+    s[i++] = c;
   }
-
-  if (isdigit(c)) /* collect integer part */
-    while (isdigit(s[++i] = c = getch()))
-      ;
-
-  if (c == '.') /* collect fraction part */
-      while (isdigit(s[++i] = c = getch()))
-        ;
-
   s[i] = '\0';
-  if (c != EOF)
-    ungetch(c);
-
-  return NUMBER;
-}
-
-/* buffer for ungetch */
-/* next free position in buf */
-int getch(void) /* get a (possibly pushed-back) character
-*/
-{
-  if (bufferState == 1) {
-    bufferState = 0;
-    return buf;
-  }
-  return getchar();
-}
-void ungetch(int c)
- /* push character back on input */
-{
-  if (bufferState == 1)
-    printf("ungetch: too many characters\n");
-  else {
-    buf = c;
-    bufferState = 1;
-  }
+  return i;
 }
