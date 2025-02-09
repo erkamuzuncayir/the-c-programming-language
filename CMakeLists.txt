@@ -61,7 +61,9 @@ add_executable(the_c_programming_language
         #       ch_05/ex_05_03.c
         #       ch_05/ex_05_04.c
         #       ch_05/ex_05_05.c
-        ch_05/ex_05_06.c
+        #       ch_05/ex_05_06.c
+        #       ch_05/ex_05_10.c
+        ch_05/ex_05_13.c
 )
 
 target_link_libraries(the_c_programming_language m)
