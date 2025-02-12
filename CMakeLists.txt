@@ -3,45 +3,45 @@ project(the_c_programming_language C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(the_c_programming_language
-        #       ch_01/ex_1/ex_1_1.c
-        #       ch_01/ex_10/ex_1_10.c
-        #       ch_01/ex_12/ex_1_12.c
-        #       ch_01/ex_13/ex_1_13.c
-        #       ch_01/ex_14/ex_1_14.c
-        #       ch_01/ex_15/ex_1_15.c
-        #       ch_01/ex_16/ex_1_16.c
-        #       ch_01/ex_17/ex_1_17.c
-        #       ch_01/ex_18/ex_1_18.c
-        #       ch_01/ex_19/ex_1_19.c
-        #       ch_01/ex_2/ex_1_2.c
-        #       ch_01/ex_20/ex_1_20.c
-        #       ch_01/ex_21/ex_1_21.c
-        #       ch_01/ex_22/ex_1_22.c
-        #       ch_01/ex_23/ex_1_23.c
-        #       ch_01/ex_24/ex_1_24.c
-        #       ch_01/ex_3/ex_1_3.c
-        #       ch_01/ex_4/ex_1_4.c
-        #       ch_01/ex_5/ex_1_5.c
-        #       ch_01/ex_6/ex_1_6.c
-        #       ch_01/ex_7/ex_1_7.c
-        #       ch_01/ex_8/ex_1_8.c
-        #       ch_01/ex_9/ex_1_9.c
-        #       ch_02/ex_1/ex_2_1.c
-        #       ch_02/ex_2/ex_2_2.c
-        #       ch_02/ex_3/ex_2_3.c
-        #       ch_02/ex_4/ex_2_4.c
-        #       ch_02/ex_5/ex_2_5.c
-        #       ch_02/ex_6/ex_2_6.c
-        #       ch_02/ex_7/ex_2_7.c
-        #       ch_02/ex_8/ex_2_8.c
-        #       ch_02/ex_9/ex_2_9.c
-        #       ch_02/ex_10/ex_2_10.c
-        #       ch_03/ex_01/ex_03_01.c
-        #       ch_03/ex_02/ex_03_02.c
-        #       ch_03/ex_03/ex_03_03.c
-        #       ch_03/ex_04/ex_03_04.c
-        #       ch_03/ex_05/ex_03_05.c
-        #       ch_03/ex_06/ex_03_06.c
+        #       ch_01/ex_01_01.c
+        #       ch_01/ex_01_02.c
+        #       ch_01/ex_01_03.c
+        #       ch_01/ex_01_04.c
+        #       ch_01/ex_01_05.c
+        #       ch_01/ex_01_06.c
+        #       ch_01/ex_01_07.c
+        #       ch_01/ex_01_08.c
+        #       ch_01/ex_01_09.c
+        #       ch_01/ex_01_10.c
+        #       ch_01/ex_01_12.c
+        #       ch_01/ex_01_13.c
+        #       ch_01/ex_01_14.c
+        #       ch_01/ex_01_15.c
+        #       ch_01/ex_01_16.c
+        #       ch_01/ex_01_17.c
+        #       ch_01/ex_01_18.c
+        #       ch_01/ex_01_19.c
+        #       ch_01/ex_01_20.c
+        #       ch_01/ex_01_21.c
+        #       ch_01/ex_01_22.c
+        #       ch_01/ex_01_23.c
+        #       ch_01/ex_01_24.c
+        #       ch_02/ex_02_01.c
+        #       ch_02/ex_02_02.c
+        #       ch_02/ex_02_03.c
+        #       ch_02/ex_02_04.c
+        #       ch_02/ex_02_05.c
+        #       ch_02/ex_02_06.c
+        #       ch_02/ex_02_07.c
+        #       ch_02/ex_02_08.c
+        #       ch_02/ex_02_09.c
+        #       ch_02/ex_02_10.c
+        #       ch_03/ex_03_01.c
+        #       ch_03/ex_03_02.c
+        #       ch_03/ex_03_03.c
+        #       ch_03/ex_03_04.c
+        #       ch_03/ex_03_05.c
+        #       ch_03/ex_03_06.c
         #       ch_04/ex_04_01.c
         #       ch_04/ex_04_02.c
         #       ch_04/ex_04_03.c
@@ -65,8 +65,8 @@ add_executable(the_c_programming_language
         #       ch_05/ex_05_10.c
         #       ch_05/ex_05_13.c
         #       ch_05/ex_05_14.c
-        #        ch_05/ex_05_15.c
-        #        ch_05/ex_05_16.c
+        #       ch_05/ex_05_15.c
+        #       ch_05/ex_05_16.c
 )
 
 target_link_libraries(the_c_programming_language m)
